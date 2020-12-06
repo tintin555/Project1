@@ -1,0 +1,162 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1426.66666666667,1922.66666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="23">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Management.Automation</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="1406.66666666667,1822.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="1364.66666666667,1730.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="s:String[]" Name="dateFiles" />
+        <Variable x:TypeArguments="s:String[]" Name="AllFiles" />
+        <Variable x:TypeArguments="si:DirectoryInfo" Name="dateNowFolder" />
+        <Variable x:TypeArguments="si:DirectoryInfo" Name="folder2020" />
+        <Variable x:TypeArguments="si:DirectoryInfo" Name="folder2019" />
+        <Variable x:TypeArguments="si:DirectoryInfo" Name="folder2018" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="1322.66666666667,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[dateFiles]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(“C:\Users\eteeny001\Documents\UiPath\Project 1\files\nd340-c1-intro-to-uipath-rpa-project-starter-master”,"*_Report_????????"+”.*”)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Create folder with MM-dd-yyyy format" sap:VirtualizedContainerService.HintSize="1322.66666666667,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign.To>
+          <OutArgument x:TypeArguments="si:DirectoryInfo">[dateNowFolder]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="si:DirectoryInfo">[Directory.CreateDirectory("C:\Users\eteeny001\Documents\UiPath\Project 1\files\nd340-c1-intro-to-uipath-rpa-project-starter-master\"+System.DateTime.Now.ToString("MM-dd-yyyy"))]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Create folder for 2020 reports" sap:VirtualizedContainerService.HintSize="1322.66666666667,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_5">
+        <Assign.To>
+          <OutArgument x:TypeArguments="si:DirectoryInfo">[folder2020]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="si:DirectoryInfo">[Directory.CreateDirectory("C:\Users\eteeny001\Documents\UiPath\Project 1\files\nd340-c1-intro-to-uipath-rpa-project-starter-master\2020")]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Create folder for 2019 reports" sap:VirtualizedContainerService.HintSize="1322.66666666667,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_6">
+        <Assign.To>
+          <OutArgument x:TypeArguments="si:DirectoryInfo">[folder2019]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="si:DirectoryInfo">[Directory.CreateDirectory("C:\Users\eteeny001\Documents\UiPath\Project 1\files\nd340-c1-intro-to-uipath-rpa-project-starter-master\2019")]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Create folder for 2018 reports" sap:VirtualizedContainerService.HintSize="1322.66666666667,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_7">
+        <Assign.To>
+          <OutArgument x:TypeArguments="si:DirectoryInfo">[folder2018]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="si:DirectoryInfo">[Directory.CreateDirectory("C:\Users\eteeny001\Documents\UiPath\Project 1\files\nd340-c1-intro-to-uipath-rpa-project-starter-master\2018")]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1322.66666666667,693.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[dateFiles]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="x:String">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1286,556" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[item.Contains(&quot;2020&quot;)]" sap:VirtualizedContainerService.HintSize="1244,464" sap2010:WorkflowViewState.IdRef="If_5">
+                <If.Then>
+                  <ui:MoveFile ContinueOnError="{x:Null}" Destination="[folder2020.ToString]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_3" Overwrite="False" Path="[item]" />
+                </If.Then>
+                <If.Else>
+                  <If Condition="[item.Contains(&quot;2019&quot;)]" sap:VirtualizedContainerService.HintSize="814,312" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If.Then>
+                      <ui:MoveFile ContinueOnError="{x:Null}" Destination="[folder2019.ToString]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_4" Overwrite="False" Path="[item]" />
+                    </If.Then>
+                    <If.Else>
+                      <ui:MoveFile ContinueOnError="{x:Null}" Destination="[folder2018.ToString]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_5" Overwrite="False" Path="[item]" />
+                    </If.Else>
+                  </If>
+                </If.Else>
+              </If>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+      </ui:ForEach>
+      <Assign sap:VirtualizedContainerService.HintSize="1322.66666666667,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_8">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[AllFiles]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(“C:\Users\eteeny001\Documents\UiPath\Project 1\files\nd340-c1-intro-to-uipath-rpa-project-starter-master”)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1322.66666666667,297.333333333333" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[AllFiles]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="x:String">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+            </ActivityAction.Argument>
+            <ui:MoveFile ContinueOnError="{x:Null}" Destination="[dateNowFolder.ToString]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_6" Overwrite="False" Path="[item]" />
+          </ActivityAction>
+        </ui:ForEach.Body>
+      </ui:ForEach>
+    </Sequence>
+  </Sequence>
+</Activity>
